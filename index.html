@@ -9,47 +9,545 @@
   <title>Frontend Mentor | Interactive card details form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+  <!-- fontawesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    *,
+    *::before,
+    *::after {
+      box-sizing:border-box;
+    }
 
     body {
-      background-color:#888;
+      margin:0;
+      padding:0;  
+      background: color #f4f4f4;
+
+      font-size:18px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    
+    .container {
+      width:90%;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    .row {
+      display:flex;
+    }
+
+    img {
+      width:90%;
+    }
+
+    label {
+      display:block;
+      text-transform:uppercase;
+      letter-spacing:1.4px;
+      
+      font-size:0.7rem;
+
+      margin-bottom:0.4rem;
+    }
+
+    input {
+      display:block;
+      width:100%;
+
+      border:0;
+      border:1px solid #ccc;      
+
+      padding:12px 0;
+      padding-left:10px;
+
+      border-radius:7px;
+    }
+
+    input::placeholder {      
+      color:#ccc;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size:15px;
+    }
+
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+      display:none;
+    }
+
+    input:focus {
+      outline:none;
+    }
+
+    .card__section {
+      width:100vw;
+      height:40vh;
+
+      background-image:url('./images/bg-main-mobile.png');
+      background-repeat:no-repeat;
+      background-size:cover;
+    }
+
+    .main__section {            
+      margin-top:5rem;        
+    }
+    
+    .input_group {
+      margin-bottom:1rem;
+    }        
+
+    .left__side--input {
+      width:40%;
+      margin-right:1rem;
+    }
+
+    .right__side--input {
+      width:60%;
+    }
+
+    .year {
+      margin-left:0.5rem;
+    }    
+
+    .img__container {          
+      height:40vh;
+      max-width:383px;
+
+
+      margin:1rem auto 0;
+
+      position:relative;       
+    }
+
+    .back__container,
+    .front__container {
+      position:absolute;
+      max-width:359px;   
+
+      width:98%;
+    }
+
+    .back__container {        
+      /* right:-13%;     */
+      right:0;
+      z-index:1;      
+      top:15%;  
+
+      display:flex;
+      justify-content:flex-end;      
+    }
+
+    .front__container {            
+      top:53%;            
+      left:0;
+
+      z-index:2;      
+    }
+
+    .front,
+    .back {
+      display:block;
+      width:90%;
+  
+      position:relative;
+    }    
+
+    .card_logo {
+      position:absolute;
+      top:10%;
+      left:5%;
+      
+      width:15%;
+      height:15%;
+    }
+    
+
+    .number__card {
+      position:absolute;
+      
+      letter-spacing:2px;
+      /* font-size:clamp(); */
+      font-size:clamp(1rem ,5vw, 1.1rem);
+      
+
+      top:50%;
+      left:5%;
+
+      color:#fff;
+    }
+
+    .card__detail--holder {
+      position:absolute;      
+          
+      width:75%;
+
+      top:73%;
+      left:5%;
+
+      font-size:0.65rem;
+
+      color:#fff;
+      font-weight:100;
+
+      text-transform:uppercase;
+      letter-spacing:1.2px;
+
+
+      display:flex;
+      justify-content:space-between;
+    }        
+
+    .password__card {
+      position:absolute;
+      top:44%;
+      right:13%;
+
+      color:#fff;
+      font-size:0.8rem;      
+    }
+  
+
+    .confirm__button {
+      display:block;      
+
+      text-align:center;
+      text-decoration:none;
+      color:#fff;
+      
+      padding:12px;
+      border-radius:7px;
+
+      background-color:hsl(278, 68%, 11%);
+    }
+
+    .invalid__text {
+      display:inline;
+      color:red;
+
+      font-size:0.8rem;
+      display:none;
+    }
+
+    .input__invalid {
+      border-color:red;      
+      border-width:1.3px;
+    }
+
+    @media (min-width:1200px) {      
+      .row__container{
+        display:flex;   
+        gap:5rem;     
+      }
+
+      .input_group {
+        margin-bottom:2rem;
+      }
+
+      label {
+        font-size:0.75rem;
+      }   
+
+      .card__section {
+        width:30vw;
+        height:100vh;
+      }
+
+      .card__section .container {
+        align-self:center;
+      }
+      
+
+      .back__container {
+        top:30%;        
+        left:65%;
+
+        display:flex;
+        justify-content:flex-start;
+      }
+
+      .front__container {       
+        top:-40%;
+        left:50%;        
+      }
+
+      .password__card {              
+        right:25%;   
+      }
+     
+      .main__section {
+        width:30%;    
+             
+        align-self:center;
+        margin:0 auto;
+      }      
     }
   </style>
 </head>
 <body>
 
-  0000 0000 0000 0000
+  <!-- 0000 0000 0000 0000
   Jane Appleseed
   00/00
 
   000
 
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
 
   Confirm
 
   <!-- Completed state start -->
 
-  Thank you!
+  <!-- Thank you!
   We've added your card details
-  Continue
+  Continue -->
+
+    <div class="row__container">
+      <section class="card__section row">
+        <div class="container">                      
+            <div class="img__container">
+              <div class="back__container">
+                <img src="./images/bg-card-back.png" class="back" />
+                <span id="cvc_card" class="password__card">000</span>              
+              </div>       
+              <div class="front__container">
+                
+                <img src="./images/bg-card-front.png" class="front" /> 
+                
+                <img src="./images/card-logo.svg" class="card_logo" />
+                <span class="number__card" id="number__card">0000 0000 0000 0000</span>
+            
+                <div class="card__detail--holder">
+                  <span id="name__holder">Unknown</span>
+                  <span class="date__card">
+                    <span id="month_card">00</span>/<span id="year_card">00</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
   
-  <div class="attribution">
+      <main class="main__section">
+        <div class="container">
+          <div class="input_group">
+            <label for="holder_name" class="holder__name--label">Cardholder name</label>
+            <input type="text" name="holder_name" id="holder_name" class="holder_name" placeholder="e.g. Jane Appleseed"  />
+            <span class="invalid__text">Name is required</span>
+          </div>
+  
+          <div class="input_group">
+            <label for="card_number" class="card_number--label">Card number</label>
+            <input type="text" name="card_number" id="card_number" class="card_number card-number" placeholder="e.g. 1234 5678 9123 0000"  />
+            <span class="invalid__text">Card Number is required</span>
+          </div>
+  
+          <div class="row">
+            <div class="input_group left__side--input">
+              <label for="month" class="month_and_year">Exp. Date (MM/YY)</label>
+    
+              <div class="row">
+                <div class="input_group">
+                  <input type="number" name="month" id="month" class="month" placeholder="MM"  />
+                  <span class="invalid__text" style="margin-left:1px;">Required</span>
+                </div>
+    
+                <div class="input_group">
+                  <input type="number" name="year" id="year" class="year" placeholder="YY"  />
+                  <span class="invalid__text" style="margin-left:11px;">Required</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="input_group right__side--input">
+              <label for="cvc_number" class="cvc_number--label">CVC</label>
+              <input type="number" name="cvc" id="cvc_number" class="cvc_number" placeholder="e.g. 123"  />
+              <span class="invalid__text">Can't be blank</span>
+            </div>
+            
+          </div>
+
+          <div class="input_group">              
+            <a href="#" class="confirm__button" id="confirm_button">Confirm</a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+
+  
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
+
+
+  <!-- Cleave js for formatting the credit card number -->
+  <script src="cleave.js"></script>
+
+  <script>
+    "use strict";
+
+    // this is for text-formatting for credit card
+    new Cleave('.card-number', {
+      creditCard: true,
+    });
+
+
+    // user details in form
+
+    const holder_name = document.getElementById('holder_name');
+    const card_number = document.getElementById('card_number');
+    const exp_month = document.getElementById('month');
+    const exp_year = document.getElementById('year');
+    const cvc_number = document.getElementById('cvc_number');
+
+    const confirm_button = document.getElementById('confirm_button'); 
+    
+    const invalid__text = document.querySelectorAll('.invalid__text');
+
+
+    // user details in card
+    const user_name = document.getElementById('name__holder');
+    const user_card = document.getElementById('number__card');
+    const user_month_card = document.getElementById('month_card');
+    const user_year_card = document.getElementById('year_card');
+    const user_cvc_card = document.getElementById('cvc_card');
+
+    
+    class CreditCardUsers {
+      // private field
+      #cardHolderName;
+      #cardNumber;
+      #cvcNumber;
+
+      constructor(cardHolderName, cardNumber, expireMonth, expireYear, cvcNumber) {
+        this.#cardHolderName = cardHolderName;
+        this.#cardNumber = cardNumber;
+        this.expireMonth = expireMonth;
+        this.expireYear = expireYear;
+        this.#cvcNumber = cvcNumber;
+      }
+
+      get holderName() {
+        return this.#cardHolderName;
+      }
+      
+    }
+
+    confirm_button.addEventListener('click', (e) => {
+      e.preventDefault;
+      let validate_form = checkAUser();
+
+      if(validate_form) {
+        addAUser();
+      }
+
+    })
+
+    function checkAUser()  {
+      let flag1;
+      let flag2;
+      let flag3;
+      let flag4;
+      let flag5;
+     
+     
+      const a_space = /^\s$/;
+      if(holder_name.value === '' || a_space.test(holder_name.value)) {        
+        holder_name.classList.add('input__invalid');
+        invalid__text[0].style.display = 'inline';
+        
+        flag1 = false;
+      } else {
+        holder_name.classList.remove('input__invalid');
+        invalid__text[0].style.display = 'none';
+
+        flag1 = true;
+
+        onChangeEvent(holder_name, addAUserToUI(user_name, holder_name.value));
+      }
+
+      if(card_number.value === '' || card_number.value.length < 16) {
+        card_number.classList.add('input__invalid');
+        invalid__text[1].style.display = 'inline';
+
+        flag2 = false;
+      } else {
+        card_number.classList.remove('input__invalid');
+        invalid__text[1].style.display = 'none';
+        
+        flag2 = true;
+
+        onChangeEvent(card_number, addAUserToUI(user_card, card_number.value));
+      }
+
+      if(exp_month.value === '' || Number(exp_month.value) > 12) {
+        exp_month.classList.add('input__invalid');
+        invalid__text[2].style.display = 'inline';
+        
+        flag3 = false;
+      } else {
+        exp_month.classList.remove('input__invalid');
+        invalid__text[2].style.display = 'none';
+
+        flag3 = true;
+
+        onChangeEvent(exp_month, addAUserToUI(user_month_card, exp_month.value));
+      }
+
+      if(exp_year.value === '') {
+        exp_year.classList.add('input__invalid');
+        invalid__text[3].style.display = 'inline';
+
+        flag4 = false;
+      } else {
+        exp_year.classList.remove('input__invalid');
+        invalid__text[3].style.display = 'none';
+
+        flag4 = true;
+
+        onChangeEvent(exp_year, addAUserToUI(user_year_card, exp_year.value));
+      }
+
+      if(cvc_number.value === '') {
+        cvc_number.classList.add('input__invalid');
+        invalid__text[4].style.display = 'inline';
+
+        flag5 = false;
+      } else {
+        cvc_number.classList.remove('input__invalid');
+        invalid__text[4].style.display = 'none';
+
+        flag5 = true;
+
+        onChangeEvent(cvc_number, addAUserToUI(user_cvc_card, cvc_number.value));
+      }
+
+      let flag = true;
+      flag = flag1 && flag2 && flag3 && flag4 && flag5 ? flag = true : flag = false;
+      return flag;
+    }
+
+    function addAUser() {
+      const user = new CreditCardUsers(holder_name.value, card_number.value, exp_month.value, exp_year.value, cvc_number.value);
+      return user;
+    }
+
+    function addAUserToUI(element, value) {
+      element.innerText = value;
+    }
+
+    function onChangeEvent(element, fun) {
+      element.addEventListener('change', () => fun);
+    }
+
+    
+  </script>
 </body>
 </html>
