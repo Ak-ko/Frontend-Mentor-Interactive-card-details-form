@@ -1,0 +1,31 @@
+Hi, this is my first experience in here but I have been coding a while. My name is Aung Khant and I am from Myanmar and I worked as a freelance website developer but need to try better. In this project, I was busied with position the images which are credit-cards indeed but  some other stuffs are easy.
+
+Documentation
+--------------
+
+ I have used only
+----------------------------
+* HTML, CSS and Vanilla-Js,
+* google font api ( for the font needed which is 'Space Grotesk' ),
+* Cleave.js
+
+I know a little bit about react but it's a bit challenge to me in doing this project with react.  Then, I chose using only three basic things in web-dev.
+
+Cleave.js is used for formatting the credit-card format. It allows you to format almost every type of the credit-card. It is super cool and easy to use too.
+
+Reference for Cleave.js
+----------------------------------------
+https://nosir.github.io/cleave.js/
+
+Check out there and you will have fun.
+
+This website is super-cool and easy to use. It's purpose is to check your credit card whether it is valid or invalid.
+You can check your card by adding information in the required fields and then click the button provided below. And that's it.
+
+Hopefully, it will work more with backends which can do realtime managements.
+
+Anyway, thank you for reading this text and checkout my website.
+
+
+
+Wish you all the best and see you guys.
